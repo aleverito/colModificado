@@ -1,0 +1,30 @@
+<ion-modal-view class="usersModal bigModal">
+    <ion-header-bar>
+        <h1 class="title">Adicionar Colegio</h1>
+        <button class="button button-dark icon ion-close-round" ng-click="closeModal();"></button>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="guardar(nombre_add,telefono_add)" id="datosMaestro-form16" class="list" name="formulario">
+            <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                <span class="input-label">Nombre</span>
+                <input type="text" placeholder="" name="nombre_add" ng-model="nombre_add" ng-pattern="/^([a-zA-z]{3,30})$/" ng-required="true">
+                <span class="assertive h6" ng-show="formulario.nombre_add.$dirty && formulario.nombre_add.$invalid"><i class="icon ion-alert"></i>Llenar el espacio con una cadena de 3 a 30 caracteres</span>                
+            </label>
+            <label class="item item-input item-stacked-label" id="datosMaestro-input36">
+                <span class="input-label">Telefono</span>
+                <input type="text" placeholder="" name="telefono_add" ng-model="telefono_add" ng-pattern="/^([0-9]{5,10})$/" ng-required="true">
+                <span class="assertive h6" ng-show="formulario.telefono_add.$dirty && formulario.telefono_add.$invalid"><i class="icon ion-alert"></i>Llenar este espacio con una cadena de numeros de 5 a 10 digitos </span>
+            </label>
+            <label class="item item-input item-stacked-label" id="datosMaestro-input31">
+                <span class="input-label">Escudo</span>
+                <input type="text" placeholder="" name="escudo" ng-model="escudo">
+                <!-- <span class="assertive h6" ng-show="formulario.escudo.$dirty && formulario.escudo.$error.required"><i class="icon ion-alert"></i>No dejar espacio en blanco</span>
+                <span class="assertive h6" ng-show="formulario.escudo.$dirty && formulario.escudo.$error.maxlength"><i class="icon ion-alert"></i>No mas de 30 caracteres</span> -->
+            </label>
+
+        <div id="datosMaestro-button-bar7" class="button-bar">
+            <button type="submit"  id="datosMaestro-button30" style="border-radius:50px 50px 50px 50px;" class="button button-positive  button-block icon ion-android-send">Guardar</button>
+        </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

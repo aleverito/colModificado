@@ -1,0 +1,32 @@
+<ion-view title="Nota Ser" id="page13">
+    <ion-content padding="true" class="has-header">
+        <form ng-submit="actualizar(data)" id="datosMaestro-form16" class="list" name="formulario">
+            <div class="list">
+                <div class="item item-divider bar bar-assertive">Ser</div>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Respeto</span>
+                        <input type="text" placeholder="" name="respeto" ng-model="data.respeto" ng-pattern="/^([0-9]{1,2}|100)$/"ng-required='false'>
+                        <span class="assertive h6" ng-show="formulario.respeto.$dirty && formulario.respeto.$invalid"><i class="icon ion-alert"></i>Debe ser un Numero de 0 a 100</span> 
+                    </label>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Solidaridad</span>
+                        <input type="text" placeholder="" name="solidaridad" ng-model="data.solidaridad" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.solidaridad.$dirty && formulario.solidaridad.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Responsabilidad</span>
+                        <input type="text" placeholder="" name="responsabilidad" ng-model="data.responsabilidad" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.responsabilidad.$dirty && formulario.responsabilidad.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label> 
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Puntualidad</span>
+                        <input type="text" placeholder="" name="puntualidad" ng-model="data.puntualidad" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.puntualidad.$dirty && formulario.puntualidad.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label>
+            </div>
+        <div id="datosMaestro-button-bar7" class="button-bar">
+            <button type="submit"  id="datosMaestro-button30" style="border-radius:50px 50px 50px 50px;" class="button button-positive  button-block icon ion-android-send">Agregar Notas</button>
+        </div>
+        </form>
+    </ion-content>
+</ion-view>

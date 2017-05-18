@@ -1,0 +1,20 @@
+<ion-view title="Lista Estudiantes" id="page13">
+    <ion-content padding="true" class="has-header">
+        <form ng-submit="guardar()" id="datosMaestro-form16" class="list" name="formulario">
+            <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+            <ion-item ng-repeat="persona in personaEst" item="item"  class="item-remove-animate" ng-click="">
+                <!-- <i class="icon icon-left ion-pricetag"></i> -->
+                <img src="/img/personita.jpg" style='width:30px;vertical-align:middle;'>
+                {{persona.AP}} {{persona.AM}} {{persona.NOMBRE}} 
+                <h2></h2>
+              </div>
+              <ion-option-button ng-if='persona.ID_NOTA==-1' class="button-assertive icon ion-clipboard" ng-click="redirect({{persona.COD_NOMINA}},'{{persona.RUDE}}',-1)">Nota</ion-option-button>
+              <ion-option-button ng-if='persona.ID_NOTA!=-1' class="button-stable icon ion-clipboard" ng-click="redirect({{persona.COD_NOMINA}},'{{persona.RUDE}}')">Cargar</ion-option-button>
+            </ion-item>
+            </ion-list>
+        <div id="datosMaestro-button-bar7" class="button-bar">
+            <!--<button type="submit"  id="datosMaestro-button30" style="border-radius:50px 50px 50px 50px;" class="button button-positive  button-block icon ion-android-send">Guardar</button>-->
+        </div>
+        </form>
+    </ion-content>
+</ion-view>

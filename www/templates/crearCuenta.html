@@ -1,0 +1,21 @@
+<ion-view title="Crear Cuenta" id="page1">
+    <ion-content padding="true" class="has-header">
+        <form id="crearCuenta-form2" class="list" name="formulario">
+            <label class="item item-input item-stacked-label" id="crearCuenta-input7">
+                <span class="input-label">Usuario</span>
+                <input type="text" placeholder="" ng-model="data.usuario" name="usuario" ng-required="true" ng-maxlength="20">
+                <span class="assertive h6" ng-show="formulario.usuario.$dirty && formulario.usuario.$error.required"><i class="icon ion-close"></i>No dejar el espacio en blanco</span>
+                <span class="h6 assertive" ng-show="formulario.usuario.$dirty && formulario.usuario.$error.maxlength"><i class="icon ion-alert"></i>Solo se puede colocar no mas de 20 caracteres</span>
+            </label>
+            <div id="crearCuenta-form4" class="list">
+                <label class="item item-input item-stacked-label" id="crearCuenta-input8">
+                    <span class="input-label" >Contraseña</span>
+                    <input type="password" placeholder="" ng-model="data.password" name="password" ng-required="true">
+                    <span class="h6 assertive" ng-show="formulario.password.$dirty && formulario.password.$error.required"><i class="icon ion-alert"></i>Necesario colocar el password</span>
+                </label>
+            </div>
+            <div class="spacer" style="width: 300px; height: 18px;"></div>
+            <a ng-click="nuevacuenta(data)" id="crearCuenta-button1" class="button button-positive  button-block">Aceptar</a>
+        </form>
+    </ion-content>
+</ion-view>

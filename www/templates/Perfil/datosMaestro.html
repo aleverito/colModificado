@@ -1,0 +1,41 @@
+<ion-view title="Datos Maestro" id="page13">
+    <ion-content padding="true" class="has-header">
+        <form ng-submit="guardar()" id="datosMaestro-form16" class="list" name="formulario">
+            <label class="item item-input item-stacked-label" id="datosMaestro-input18">
+                <span class="input-label">RDA</span>
+                <input type="text" placeholder="" name="rda" ng-model="rda" ng-required="true" ng-pattern="/^([0-9]{1,5})$/">
+                <span class="assertive h6" ng-show="formulario.rda.$dirty && formulario.rda.$invalid"><i class="icon ion-alert"></i>No dejar espacio en blanco</span>
+            </label>
+             <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                <span class="input-label">CI</span>
+                <input type="hidden" name="ci_ant" ng-model="ci_ant" ng-required="true">
+                <input type="text" placeholder="" name="ci" ng-model="ci" ng-required="true" ng-maxlength="10">
+                <span class="assertive h6" ng-show="formulario.ci.$dirty && formulario.ci.$error.required"><i class="icon ion-alert"></i>No dejar espacio en blanco</span>
+                <span class="assertive h6" ng-show="formulario.ci.$dirty && formulario.ci.$error.maxlength"><i class="icon ion-close"></i>No mas de 10 caracteres</span>
+            </label>
+            <label class="item item-input item-stacked-label" id="datosMaestro-input31">
+                <span class="input-label">Nombre</span>
+                <input type="text" placeholder="" name="nombre" ng-model="nombre" ng-required="true" ng-pattern="/^([a-zA-ZÁ,É,Í,Ó,Úá,é,í,ó,ú -]{3,30})$/">
+                <span class="assertive h6" ng-show="formulario.nombre.$dirty && formulario.nombre.$invalid"><i class="icon ion-alert"></i>Llenar con una cadena de letras de 3 a 30 caracteres</span>
+            </label>
+            <label class="item item-input item-stacked-label" id="datosMaestro-input34">
+                <span class="input-label">Apellido Paterno</span>
+                <input type="text" placeholder="" name="ap" ng-model="ap" ng-required="false" ng-pattern="/^([a-zA-ZÁ,É,Í,Ó,Úá,é,í,ó,ú -]{0,30})$/">
+                <span class="assertive h6" ng-show="formulario.ap.$dirty && formulario.ap.$invalid"><i class="icon ion-alert"></i>Llenar con una cadena alfabetica de 3 a 30</span>
+            </label>
+            <label class="item item-input item-stacked-label" id="datosMaestro-input35">
+                <span class="input-label">Apellido Materno</span>
+                <input type="text" placeholder="" name="am" ng-model="am" ng-required="false" ng-pattern="/^([a-zA-ZÁ,É,Í,Ó,Úá,é,í,ó,ú -]{0,30})$/">
+                <span class="assertive h6" ng-show="formulario.am.$dirty && formulario.am.$invalid"><i class="icon ion-alert"></i>Llenar con una cadena alfabetica de 3 a 30</span>
+            </label>
+            <label class="item item-input item-stacked-label" id="datosMaestro-input36">
+                <span class="input-label">Telefono</span>
+                <input type="text" placeholder="" name="telefono" ng-model="telefono" ng-required="true" ng-pattern="/^([0-9]{5,10})$/">
+                <span class="assertive h6" ng-show="formulario.telefono.$dirty && formulario.telefono.$invalid"><i class="icon ion-alert"></i>No dejar espacio en blanco</span>
+            </label>
+        <div id="datosMaestro-button-bar7" class="button-bar">
+            <button type="submit"  id="datosMaestro-button30" style="border-radius:50px 50px 50px 50px;" class="button button-positive  button-block icon ion-android-send">Guardar</button>
+        </div>
+        </form>
+    </ion-content>
+</ion-view>

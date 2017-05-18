@@ -1,0 +1,17 @@
+<ion-modal-view class="usersModal bigModal">
+	<ion-header-bar>
+		<h1 class="title">Escoger Estudiantes</h1>
+		<button class="button button-small button-balanced" ng-click="obtenerLista();">Listar</button>
+		<button class="button button-dark icon ion-close-round" ng-click="closeModal();"></button>
+	</ion-header-bar>
+	<ion-content>
+		<form ng-submit="agregar(estudiantes)" id="datosMaestro-form16" class="list" name="formulario">
+			<ion-list ng-repeat="estudiante in estudiantes" item="item"  class="item-remove-animate">
+				<ion-checkbox ng-model='estudiante.selected' ng-checked='{{estudiante.isCheck}}' value='{{estudiante.RUDE}}'>{{estudiante.NOMBRE}} {{estudiante.AP}} {{estudiante.AM}} {{rudes[index]}}</ion-checkbox>
+			</ion-list>
+			<div id="datosMaestro-button-bar7" class="button-bar">
+				<button type="submit"  id="datosMaestro-button30" style="border-radius:50px 50px 50px 50px;" class="button button-positive  button-block icon ion-android-send">Agregar</button>
+			</div>
+		</form>
+	</ion-content>
+</ion-modal-view>

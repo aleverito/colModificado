@@ -1,0 +1,24 @@
+
+<ion-modal-view class="usersModal bigModal">
+    <ion-header-bar>
+        <h1 class="title">Editar Materia</h1>
+        <button class="button button-dark icon ion-close-round" ng-click="closeModalMOD();"></button>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="editar(cod_m,nombre_mod,cargaH_mod)" id="datosMaestro-form16" class="list" name="formulario">
+            <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                <span class="input-label">Nombre</span>
+                <input type="text" placeholder="" name="nombre_mod" ng-model="nombre_mod" ng-required="true" ng-pattern="/^([a-zA-Z]{3,20})$/">
+                <span class="assertive h6" ng-show="formulario.nombre_mod.$dirty && formulario.nombre_mod.$invalid"><i class="icon ion-alert"></i>No dejar espacio en blanco</span>               
+            </label>
+            <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                <span class="input-label">Carga Horaria</span>
+                <input type="text" placeholder="" name="cargaH_mod" ng-model="cargaH_mod" ng-required="true" ng-pattern="/^([0-9]{1,2})$/">
+                <span class="assertive h6" ng-show="formulario.cargaH_mod.$dirty && formulario.cargaH_mod.$invalid"><i class="icon ion-alert"></i>No dejar espacio en blanco</span>                
+            </label>
+        <div id="datosMaestro-button-bar7" class="button-bar">
+            <button type="submit"  id="datosMaestro-button30" style="border-radius:50px 50px 50px 50px;" class="button button-positive  button-block icon ion-android-send">Actualizar</button>
+        </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

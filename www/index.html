@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
+	<title></title>
+	<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">
+	<link href="css/ionic-animated-modal.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/app.css" rel="stylesheet">
+	<!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+	<!-- ionic/angularjs js -->
+	<script src="lib/ionic/js/ionic.bundle.js"></script>
+	<script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+	<!-- cordova script (this will be a 404 during development) -->
+	<script src="cordova.js"></script>
+	<!-- your app's js -->
+	<script src="build/app.js"></script>
+	<script src="build/queries.js"></script>
+	<script src="build/controllers.js"></script>
+	<script src="build/Estudiantes/EstudianteController.js"></script>
+	<script src="build/Cursos/CursoController.js"></script>
+	<script src="build/Ciclo/CicloController.js"></script>
+	<script src="build/Bimestre/BimestreController.js"></script>
+	<script src="build/Materia/MateriaController.js"></script>
+	<script src="build/Colegio/ColegioController.js"></script>
+	<script src="build/Registro/RegistroController.js"></script>
+	<script src="build/Nomina/NominaController.js"></script>
+	<script src="build/Persona/PersonaController.js"></script>
+	<script src="build/Indicadores/IndicadoresController.js"></script>
+	<script src="build/Notas/SerController.js"></script>
+	<script src="build/Notas/SaberController.js"></script>
+	<script src="build/routes.js"></script>
+	<script src="build/directives.js"></script>
+	<script src="build/Interceptor.js"></script>	
+	<script src="build/services.js"></script>
+	<script src="build/conexion.js"></script>
+	<script src="build/constants.js"></script>
+	<script src="lib/angular-mocks/angular-mocks.js"></script>
+</head>
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">My Modal title</h1>
+    </ion-header-bar>
+    <ion-content>
+      Hello!
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+<body ng-app="App" animation="slide-left-right-ios7" ng-controller="initCtrl">
+	<ion-nav-bar>
+	    <ion-nav-back-button></ion-nav-back-button>
+	</ion-nav-bar>
+	<ion-nav-view animation="slide-left-right"></ion-nav-view>
+</body>
+
+</html>

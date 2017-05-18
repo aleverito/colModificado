@@ -1,0 +1,47 @@
+<ion-modal-view class="usersModal bigModal">
+    <ion-header-bar>
+        <h1 class="title">Adicionar Notas</h1>
+        <button class="button button-dark icon ion-close-round" ng-click="closeModalHacer();"></button>
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header">
+        <form ng-submit="guardarHacer(tpractico,disertacion,cuadernos,album,resumen,participacion)" id="datosMaestro-form16" class="list" name="formulario">
+            <div class="list">
+            {{id_bim}}
+                    <div class="item item-divider bar bar-balanced">Hacer</div>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">TPractico</span>
+                        <input type="text" placeholder="" name="tpractico" ng-model="tpractico" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.tpractico.$dirty && formulario.tpractico.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Disertacion</span>
+                        <input type="text" placeholder="" name="disertacion" ng-model="disertacion" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.disertacion.$dirty && formulario.disertacion.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Cuadernos</span>
+                        <input type="text" placeholder="" name="cuadernos" ng-model="cuadernos" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.cuadernos.$dirty && formulario.cuadernos.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label> 
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Album</span>
+                        <input type="text" placeholder="" name="album" ng-model="album" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.album.$dirty && formulario.album.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Resumenes</span>
+                        <input type="text" placeholder="" name="resumen" ng-model="resumen" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.resumen.$dirty && formulario.resumen.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Participacion</span>
+                        <input type="text" placeholder="" name="participacion" ng-model="participacion" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.participacion.$dirty && formulario.participacion.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100 </span>          
+                    </label>
+            </div>
+        <div id="datosMaestro-button-bar7" class="button-bar">
+            <button type="submit"  id="datosMaestro-button30" style="border-radius:50px 50px 50px 50px;" class="button button-positive  button-block icon ion-android-send">Agregar Notas</button>
+        </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

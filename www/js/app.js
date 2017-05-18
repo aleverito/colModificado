@@ -1,0 +1,95 @@
+ 	
+angular.module('starter', ['ionic', 'ngMockE2E'])
+.run(['$ionicPlatform',function($ionicPlatform){
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if(window.StatusBar) {
+      StatusBar.styleDefault();
+    }
+  });
+}])
+.config(  ['$stateProvider',
+         '$urlRouterProvider',
+         'USER_ROLES',
+         function ($stateProvider, $urlRouterProvider, USER_ROLES) {
+
+  $stateProvider
+  .state('login', {
+    url: '/login',
+    templateUrl: 'views/login.html',
+    controller: 'LoginCtrl'
+  })
+  .state('main', {
+    url: '/',
+    abstract: true,
+    templateUrl: 'views/main.html'
+  })
+  .state('main.dash', {
+    url: 'main/dash',
+    views: {
+        'dash-tab': {
+          templateUrl: 'views/dashboard.html',
+          controller: 'DashCtrl'
+        }
+    }
+  })
+  .state('main.public', {
+    url: 'main/public',
+    views: {
+        'public-tab': {
+          templateUrl: 'views/public.html'
+        }
+    }
+  })
+  .state('main.admin', {
+    url: 'main/admin',
+    views: {
+        'admin-tab': {
+          templateUrl: 'views/admin.html'
+        }
+    },
+    data: {
+      authorizedRoles: [USER_ROLES.admin]
+    }
+  });
+  
+  // Thanks to Ben Noblet!
+  $urlRouterProvider.otherwise(function ($injector, $location) {
+    var $state = $injector.get("$state");
+    $state.go("main.dash");
+  });
+}])
+.run(function ($rootScope, $state, AuthService, AUTH_EVENTS) {
+  $rootScope.$on('$stateChangeStart', function (event,next, nextParams, fromState) {
+ 
+    if ('data' in next && 'authorizedRoles' in next.data) {
+      var authorizedRoles = next.data.authorizedRoles;
+      if (!AuthService.isAuthorized(authorizedRoles)) {
+        event.preventDefault();
+        $state.go($state.current, {}, {reload: true});
+        $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
+      }
+    }
+ 
+    if (!AuthService.isAuthenticated()) {
+      if (next.name !== 'login') {
+        event.preventDefault();
+        $state.go('login');
+      }
+    }
+  });
+})
+.run(function($httpBackend){
+  $httpBackend.whenGET('http://localhost:8100/valid')
+        .respond({message: 'This is my valid response!'});
+  $httpBackend.whenGET('http://localhost:8100/notauthenticated')
+        .respond(401, {message: "Not Authenticated"});
+  $httpBackend.whenGET('http://localhost:8100/notauthorized')
+        .respond(403, {message: "Not Authorized"});
+ 
+  $httpBackend.whenGET(/views\/\w+.*/).passThrough();
+ });

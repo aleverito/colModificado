@@ -1,0 +1,38 @@
+<ion-view class="itemView pane" view-title="Materias" ng-style="{ 'background-color': item.color }" nav-view="active" style="transform: translate3d(0%, 0px, 0px); opacity: 1; " hide-nav-bar="false" >
+    <ion-content padding="true" class="has-header">
+    <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+        <ion-item ng-repeat="materia in materias" item="item"  class="item-remove-animate" ng-class="{'item-disabled':{{materia.ESTADO_MATERIA}}===0}" ng-click = "callClick()">
+        <div>
+          <i class="icon icon-left ion-pricetag"></i>
+          {{ materia.NOMBRE }}
+        </div>
+          <ion-delete-button class="" ng-click="mostrarCambioEstado({{materia.COD_M}},{{materia.ESTADO_MATERIA}})">
+          <label class="toggle toggle-assertive">
+            <input type="checkbox" ng-checked="{{materia.ESTADO_MATERIA}}==1">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+          </label>
+          </ion-delete-button>
+          <ion-option-button class="button-energized icon ion-edit" ng-click="openModalEditar(colegio)">
+            
+          </ion-option-button>
+          <ion-option-button class="button-calm icon ion-eye" ng-click="share(curso)">
+            
+          </ion-option-button>
+
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(curso, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+
+      </ion-list>
+    <br><br><br>
+  </ion-content>
+  <div class="bar bar-footer bar-light">
+	  <div class="row">
+          <button ng-click='openModalAddMateria();' class="col button button-balanced ion-archive">Adicionar Materias</button>
+	  	<button class="col button button-assertive ion-ios-minus-outline" ng-click="data.showDelete = !data.showDelete; data.showReorder = false"> Borrar</button>
+  	</div>
+  </div>
+</ion-view>
+

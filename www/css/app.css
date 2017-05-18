@@ -1,0 +1,55 @@
+#bender{
+	height: auto;	
+}
+.homeView h1 {
+	font-size: 6em;
+}
+.fx-box1{
+	background-color: rgba(32, 59, 68, 0.56);
+	box-shadow: 0px 0px 5px 2px #acb7c1;
+	text-shadow: 0px 2px 6px #5c8bb1;
+}
+.fx-box2{
+	color: #FFC107;
+	text-shadow: 0px 0px 8px #FF9800;
+}
+.card,.item{
+	background-color: transparent;
+	box-shadow: none;
+}
+.platform-android .popover {
+	 margin-top: 12px; 
+}
+.platform-android .popover-arrow {
+	position: absolute;
+	display: block;
+	top: -17px;
+	width: 30px;
+	height: 19px;
+	overflow: hidden; }
+.platform-android .popover-arrow:after {
+	position: absolute;
+	top: 12px;
+	left: 5px;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border-radius: 3px;
+	content: '';
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg); }
+
+
+.list-left-editing .item-left-editable .item-content, 
+.item-left-editing.item-left-editable .item-content {
+    -webkit-transform: translate3d(50px, 0, 0);
+    transform: translate3d(70px, 0, 0);
+}
+.item-disabled .item-content {
+    background-color: rgba(202, 202, 202, 0.62);
+    color: #929292;
+}
+img.fit{
+  max-width: 100%;
+  max-height: 100%;
+}

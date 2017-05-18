@@ -1,0 +1,30 @@
+<ion-modal-view class="usersModal bigModal">
+    <ion-header-bar>
+        <h1 class="title">Nuevo Registro</h1>
+        <button class="button button-dark icon ion-close-round" ng-click="closeModal();"></button>
+    </ion-header-bar>
+  <ion-content>
+    <form ng-submit="guardar(curso, materia, ciclo, colegio)" id="nuevoRegistro-form4" class="list" name="formulario">
+      <label class="item item-select" id="nuevoRegistro-select2">
+        <span class="input-label">Escoja el Curso</span>
+        <select name="curso" ng-model="curso" ng-options="c.ID_C as c.NOMBRE for c in cursos"></select>
+      </label>
+      <label class="item item-select" id="nuevoRegistro-select3">
+        <span class="input-label">Escoja el Ciclo</span>
+        <select name="ciclo" ng-model="ciclo" ng-options="cl.ID_CICLO as cl.NOMBRE for cl in ciclos"></select>
+      </label>
+      <label class="item item-select" id="nuevoRegistro-select4">
+        <span class="input-label">Escoja el Materia</span>
+        <select name="materia" ng-model="materia" ng-options="mt.COD_M as mt.NOMBRE for mt in materias"></select>
+      </label>
+      <label class="item item-select" id="nuevoRegistro-select1">
+        <span class="input-label">Escoja el Colegio</span>
+        <select name="colegio" ng-model="colegio" ng-options="col.COD_COLEGIO as col.NOMBRE for col in colegios"></select>
+      </label>
+
+      <div id="datosMaestro-button-bar7" class="button-bar">
+            <button type="submit"  id="datosMaestro-button30" style="border-radius:50px 50px 50px 50px;" class="button button-positive  button-block icon ion-android-send">Crear</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

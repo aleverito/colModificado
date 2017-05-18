@@ -1,0 +1,40 @@
+  <ion-view class="itemView pane" view-title="Operacion de Notas" ng-style="{ 'background-color': item.color }" nav-view="active" style="transform: translate3d(0%, 0px, 0px); opacity: 1; " hide-nav-bar="false" >
+      <ion-content padding="true" class="has-header">
+      <h2>{{idnota}}</h2>
+      <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+          <ion-item ng-repeat="bimestre in bimestres" item="item"  class="item-remove-animate" ng-click="callClick()">
+          <!-- <ion-toggle> -->
+          <div>
+            <i class="icon icon-left ion-pricetag"></i>
+            {{ bimestre.NOMBRE }}
+            
+          </div>
+            
+            <ion-delete-button class="">
+            <label class="toggle toggle-assertive">
+              <input type="checkbox" >
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+            </ion-delete-button>
+            <ion-option-button class="button-assertive icon ion-clipboard" ng-click="openModalNotaSer({{bimestre.ID_B}});">Ser</ion-option-button>
+            <ion-option-button class="button-energized icon ion-clipboard" ng-click="openModalNotaSaber();">Saber</ion-option-button>
+            <ion-option-button class="button-balanced icon ion-clipboard" ng-click="openModalNotaHacer();">Hacer</ion-option-button>
+            <ion-option-button class="button-calm icon ion-clipboard" ng-click="openModalNotaDecidir();">Decidir</ion-option-button>
+
+            <!--<ion-reorder-button class="ion-navicon" on-reorder="moveItem(curso, $fromIndex, $toIndex)"></ion-reorder-button>-->
+          <!-- </ion-toggle> -->
+          </ion-item>
+
+        </ion-list>
+      <br><br><br>
+    </ion-content>
+    <div class="bar bar-footer bar-light">
+      <div class="row">
+        <!--<button ng-click="modalAdicionarCurso()" class="col button button-balanced ion-person-add"> Add Curso</button>
+        <button class="col button button-assertive ion-ios-minus-outline" ng-click="data.showDelete = !data.showDelete; data.showReorder = false"> Borrar</button>-->
+      </div>
+    </div>
+  </ion-view>

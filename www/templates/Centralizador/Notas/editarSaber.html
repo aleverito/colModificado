@@ -1,0 +1,37 @@
+<ion-view title="Nota Saber" id="page13">
+    <ion-content padding="true" class="has-header">
+        <form ng-submit="actualizarSaber(data)" id="datosMaestro-form16" class="list" name="formulario">
+            <div class="list">
+                <div class="item item-divider bar bar-energized">Saber</div>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Examen1</span>
+                        <input type="text" placeholder="" name="exam1" ng-model="data.exam1" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.exam1.$dirty && formulario.exam1.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Examen2</span>
+                        <input type="text" placeholder="" name="exam2" ng-model="data.exam2" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.exam2.$dirty && formulario.exam2.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Examen3</span>
+                        <input type="text" placeholder="" name="exam3" ng-model="data.exam3" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.exam3.$dirty && formulario.exam3.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label> 
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Examen4</span>
+                        <input type="text" placeholder="" name="exam4" ng-model="data.exam4" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.exam4.$dirty && formulario.exam4.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Examen5</span>
+                        <input type="text" placeholder="" name="exam5" ng-model="data.exam5" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.exam5.$dirty && formulario.exam5.$invalid"><i class="icon ion-alert"></i>No dejar espacio en blanco</span>          
+                    </label>
+            </div>
+        <div id="datosMaestro-button-bar7" class="button-bar">
+            <button type="submit"  id="datosMaestro-button30" style="border-radius:50px 50px 50px 50px;" class="button button-positive  button-block icon ion-android-send">Agregar Notas</button>
+        </div>
+        </form>
+    </ion-content>
+</ion-view>

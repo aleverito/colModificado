@@ -1,0 +1,36 @@
+<ion-modal-view class="usersModal bigModal">
+    <ion-header-bar>
+        <h1 class="title">Adicionar Notas</h1>
+        <button class="button button-dark icon ion-close-round" ng-click="closeModalDecidir();"></button>
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header">
+        <form ng-submit="guardarDecidir(creatividad,desarrollo,autoder,depecri)" id="datosMaestro-form16" class="list" name="formulario">
+            <div class="list">
+            {{id_bim}}
+                    <div class="item item-divider bar bar-calm">Decidir</div>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Creatividad</span>
+                        <input type="text" placeholder="" name="creatividad" ng-model="creatividad" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.creatividad.$dirty && formulario.creatividad.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Desarrollo_PSP</span>
+                        <input type="text" placeholder="" name="desarrollo" ng-model="desarrollo" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.desarrollo.$dirty && formulario.desarrollo.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label>
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Autodeterminacion</span>
+                        <input type="text" placeholder="" name="autoder" ng-model="autoder" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.autoder.$dirty && formulario.autoder.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label> 
+                    <label class="item item-input item-stacked-label" id="datosMaestro-input19">
+                        <span class="input-label">Desarrollo_Pto_Critico</span>
+                        <input type="text" placeholder="" name="depecri" ng-model="depecri" ng-pattern="/^([0-9]{1,2}|100)$/" ng-required="false">
+                        <span class="assertive h6" ng-show="formulario.depecri.$dirty && formulario.depecri.$invalid"><i class="icon ion-alert"></i>Debe ser un numero de 0 a 100</span>          
+                    </label>
+        <div id="datosMaestro-button-bar7" class="button-bar">
+            <button type="submit"  id="datosMaestro-button30" style="border-radius:50px 50px 50px 50px;" class="button button-positive  button-block icon ion-android-send">Agregar Notas</button>
+        </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

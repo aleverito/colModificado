@@ -1,0 +1,32 @@
+<ion-view class="itemView pane" view-title="Listar Colegios" ng-style="{ 'background-color': item.color }" nav-view="active" style="transform: translate3d(0%, 0px, 0px); opacity: 1; " hide-nav-bar="false" >
+    <ion-content padding="true" class="has-header">
+    <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+        <ion-item ng-repeat="colegio in colegios" item="item"  class="item-remove-animate" ng-class="{'item-disabled':{{colegio.ESTADO_COLEGIO}}===0}" ng-click = "callClick()">
+          <i class="icon icon-left ion-pricetag"></i>
+          {{ colegio.NOMBRE }}
+          <ion-delete-button class="" ng-click="cambioEstado({{colegio.COD_COLEGIO}},{{colegio.ESTADO_COLEGIO}})">
+          <label class="toggle toggle-assertive">
+            <input type="checkbox" ng-checked="{{colegio.ESTADO_COLEGIO}}==1">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+          </label>
+          </ion-delete-button>
+          <ion-option-button class="button-energized icon ion-edit" ng-click="openModalEditar(colegio)">
+            
+          </ion-option-button>
+          
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(curso, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+
+      </ion-list>
+    <br><br><br>
+  </ion-content>
+  <div class="bar bar-footer bar-light">
+	  <div class="row">
+	  	<button ng-click="openModalAddColegio();" class="col button button-balanced ion-person-add"> Adicionar Colegio</button>
+	  	<button class="col button button-assertive ion-ios-minus-outline" ng-click="data.showDelete = !data.showDelete; data.showReorder = false"> Borrar</button>
+  	</div>
+  </div>
+</ion-view>
